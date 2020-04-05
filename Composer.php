@@ -43,7 +43,7 @@ class Composer extends Module
 		return null;
 	}
 
-	public function addToJson(string $package, string $version)
+	public function addToJson(string $package, string $version = '*')
 	{
 		$json = $this->getJson();
 
