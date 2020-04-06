@@ -6,15 +6,6 @@ class Config extends Module_Config
 {
 	public $configurable = true;
 
-	public function init(?array $data = null): bool
-	{
-		// Checks if composer is actually available
-		exec('composer', $outputArr, $return);
-		if ($return !== 0)
-			return false;
-		return true;
-	}
-
 	/**
 	 * Returns the config template
 	 *
@@ -23,7 +14,7 @@ class Config extends Module_Config
 	 */
 	public function getTemplate(string $type): ?string
 	{
-		return 'config';
+		return $type === 'config' ? 'config' : null;
 	}
 
 	/**
